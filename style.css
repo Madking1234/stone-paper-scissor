@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #8cc461;
+  overflow: hidden;
+}
+.game{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+}
+.game-name {
+  margin: 5px 0;
+  width: 60%;
+  padding-left: 19px;
+}
+.game-name ul {
+  list-style: none;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+.score-box {
+  max-width: 800px;
+  height: 158px;
+  border: 2px solid white;
+  background-color: #8cc461;
+  display: flex;
+  margin: 62px auto;
+  border-radius: 12px;
+  justify-content: space-between;
+}
+.score-card {
+  display: flex;
+  gap: 5px;
+  width: 40%;
+}
+.score {
+  width: 146px;
+  height: 128px;
+  background-color: white;
+  color: rgba(101, 101, 101, 1);
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 9px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+.score p {
+  margin: 0;
+}
+.score1 p {
+  font-size: 70px;
+  font-weight: 700;
+  color: black;
+}
+.score2 p {
+  font-size: 70px;
+  font-weight: 700;
+  color: black;
+}
+.game-play {
+  width: 700px;
+  height: 277px;
+  position: relative;
+  margin: 100px auto;
+}
+.triangle {
+  width: 18em;
+  height: 18em;
+  border: 1em solid rgba(0, 0, 0, 0.64);
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  left: 50%;
+  top: 37%;
+  border-right: none;
+  border-bottom: none;
+}
+.triangle:before {
+  position: absolute;
+  content: "";
+  border-top: 1em solid rgba(0, 0, 0, 0.64);
+  width: calc(1.41 * (18em + 1em));
+  transform: rotate(-45deg);
+  left: -4.3em;
+  top: 8.35em;
+}
+.stone-scissor {
+  display: flex;
+  justify-content: space-around;
+}
+.stone {
+  position: relative;
+}
+.get-stone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border: none;
+  background-color: transparent;
+}
+.scissor {
+  position: relative;
+}
+.get-scissor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border: none;
+  background-color: transparent;
+}
+.paper {
+  position: relative;
+}
+.image5 {
+  z-index: 9999;
+  padding-left: 266px;
+  position: relative;
+  padding-top: 17px;
+}
+
+.get-paper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border: none;
+  background-color: transparent;
+}
+
+.results {
+  display: none;
+  margin: 0 auto;
+  width: 692px;
+  text-align: center;
+  justify-content: space-between;
+  color: white;
+  margin-top: 133px;
+}
+.image-container1 {
+  position: relative;
+  text-align: center;
+}
+
+#choice-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.image-container2 {
+  position: relative;
+  text-align: center;
+}
+
+#choice-image1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.descision-maker {
+  padding-top: 94px;
+}
+.descision-maker h1 {
+  font-size: 39px;
+  font-weight: 800;
+}
+.descision-maker h2 {
+  font-size: 25px;
+  font-weight: 800;
+}
+.play-again {
+  height: 44px;
+  width: 144px;
+  border-radius: 9px;
+  border: none;
+  background-color: white;
+  color: rgba(107, 107, 107, 1);
+  margin-top: 20px;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  padding-right: 60px;
+  margin-top: 150px;
+}
+.buttons button {
+  height: 56px;
+  width: 158px;
+  border-radius: 10px;
+  border: 2px solid white;
+  color: white;
+  background-color: #8cc461;
+  font-size: 32px;
+  font-weight: 600;
+}
+.next-button {
+  display: none;
+}
+.image-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  background-size: cover;
+}
+.game-rules {
+  font-size: 29px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+.task {
+  width: 346px;
+  height: 353px;
+  background-color: rgba(0, 68, 41, 1);
+  border: 8px solid white;
+  border-radius: 15px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-right: 60px;
+  transform: translateY(-50%);
+  z-index: 0;
+  display: none;
+}
+.task ul {
+  padding: 32px;
+  color: white;
+}
+.task ul li {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 15px;
+}
+
+.close {
+  width: 68px;
+  height: 69px;
+  background-color: red;
+  border: 8px solid white;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 31%;
+  margin-right: 32px;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: none;
+}
+.close p {
+  padding-left: 12px;
+  font-size: 44px;
+  font-weight: 800;
+  color: white;
+}
+.winner-page {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 80vh;
+}
+.winner-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 58px;
+}
+.rules-open {
+  height: 56px;
+  width: 158px;
+  border-radius: 10px;
+  border: 2px solid white;
+  color: white;
+  background-color: #8cc461;
+  font-size: 32px;
+  font-weight: 600;
+  margin-left: 84%;
+  padding-top: 8px;
+}
+.again-play {
+  height: 55px;
+  width: 236px;
+  border-radius: 9px;
+  border: none;
+  background-color: white;
+  color: rgba(107, 107, 107, 1);
+  margin-top: 20px;
+  font-size: 22px;
+  padding-top: 16px;
+}
+.text1 {
+  font-size: 100px;
+  color: white;
+  font-weight: 700;
+  padding-top: 20px;
+}
+.text {
+  font-size: 50px;
+  color: white;
+  font-weight: 700;
+}
+.winning-image {
+  position: relative;
+  display: inline-block;
+}
+.winning-image::before {
+  content: "";
+  display: block;
+  width: 238%;
+  padding-bottom: 57.99%;
+  background-image: url("Group 5.svg");
+  background-size: cover;
+  position: absolute;
+  top: -52%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80%;
+}
+.winner-page {
+  display: none;
+  margin-top: 13%;
+  height: 100%;
+}
+
